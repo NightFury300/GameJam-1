@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class ItemHolder : MonoBehaviour
 {
     private int enlargeBallCount = 0;
     private int shrinkBallCount = 0;
-    [SerializeField] private Text enlargeBallCountText;
-    [SerializeField] private Text shrinkBallCountText;
+    [SerializeField] private TextMeshProUGUI enlargeBallCountText;
+    [SerializeField] private TextMeshProUGUI shrinkBallCountText;
 
-    void Update()
+    private void Update()
     {
         UpdateInventory();
     }
