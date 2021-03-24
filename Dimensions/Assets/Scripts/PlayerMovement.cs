@@ -77,5 +77,10 @@ public class PlayerMovement : MonoBehaviour
             state = State.idle;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D item)
+    {
+        Destroy(item.gameObject);
+    }
      
 }
