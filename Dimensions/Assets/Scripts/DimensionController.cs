@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class DimensionController : MonoBehaviour
 {
+    [SerializeField] private ItemHolder inventory;
+
     private Transform targetObstacle;
     private Vector2 targetScale;
-    private bool Scaling = false;
+    private bool isScaling = false;
     [SerializeField] private float scalingSpeed = 1.0f;
     [SerializeField] private float scalingAmount = 2.5f;
 
+
+    /*private void Start()
+    {
+        inventory = GetComponent<ItemHolder>();
+    }*/
     void EnlargeDimensions()
     {
        targetScale = new Vector2(targetObstacle.localScale.x * scalingAmount, targetObstacle.localScale.y * scalingAmount);
-       Scaling = true;
+       inventory.ReduceEnlargeCount();
+       isScaling = true;
     }
 
     void ShrinkDimensions()
     {
        targetScale = new Vector2(targetObstacle.localScale.x / scalingAmount, targetObstacle.localScale.y / scalingAmount);
-       Scaling = true;
+       inventory.ReduceShrinkCount();
+       isScaling = true;
     }
 
     private void ItemUsed()
-    {
-        if (Input.GetMouseButtonDown(0))
+    {            
+        if (Input.GetMouseButtonDown(0) && inventory.GetEnlargeCount() > 0)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider.tag == "Box")
             {
@@ -36,11 +44,10 @@ public class DimensionController : MonoBehaviour
                 EnlargeDimensions();
             }
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && inventory.GetShrinkCount() > 0)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider.tag == "Box")
             {
@@ -53,12 +60,18 @@ public class DimensionController : MonoBehaviour
     private void UpdateScale()
     {      
         targetObstacle.localScale = Vector2.MoveTowards(targetObstacle.localScale, targetScale, scalingSpeed * Time.deltaTime);
+        if(targetObstacle.localScale.x == targetScale.x && targetObstacle.localScale.y == targetScale.y)
+        {
+            isScaling = false;
+        }
     }
         
     void Update()
     {
         ItemUsed();
-        if(Scaling)
-             UpdateScale();
+        if (isScaling)
+        {
+            UpdateScale();
+        }
     }
 }

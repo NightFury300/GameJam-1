@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator playerAnim;
     private enum State { idle,running,jumping,falling}
     private State state = State.idle;
+    private ItemHolder inventory;
 
 
     [SerializeField] private float speed = 3f;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        inventory = GetComponent<ItemHolder>();
     }
     private void Update()
     {
@@ -80,7 +82,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D item)
     {
-        Destroy(item.gameObject);
+        if(item.gameObject.tag == "enlargeball")
+        {
+            inventory.AddItemToInventory(0);
+        }
+        else if(item.gameObject.tag == "shrinkball")
+        {
+            inventory.AddItemToInventory(1);
+        }
+        Destroy(item.gameObject);      
     }
      
 }
