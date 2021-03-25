@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6377930950739280505}
   - component: {fileID: 6377930950739280487}
   - component: {fileID: 6377930950739280504}
+  - component: {fileID: 3153085216900371668}
   m_Layer: 0
   m_Name: ShrinkItem
   m_TagString: shrinkball
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6666667, y: 2.6666667}
   m_EdgeRadius: 0
+--- !u!114 &3153085216900371668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377930950739280506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c190c0440ac01a949884660a03edf939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

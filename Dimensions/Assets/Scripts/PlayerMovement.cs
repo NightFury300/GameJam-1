@@ -92,5 +92,12 @@ public class PlayerMovement : MonoBehaviour
         }
         Destroy(item.gameObject);      
     }
-     
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            state = State.idle;
+        }
+    }
 }
