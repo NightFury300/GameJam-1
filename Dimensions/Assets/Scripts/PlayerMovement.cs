@@ -1,15 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator playerAnim;
+    Vector2 movement = Vector2.zero;
     private enum State { idle,running,jumping,falling}
     private State state = State.idle;
     private ItemHolder inventory;
 
 
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private float speed = 5.0f;
     [SerializeField] private float jumpForce = 15f;
 
     [SerializeField]private LayerMask ground;
@@ -22,22 +24,29 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        move();
         PlayerState();
+    }
+
+    private void FixedUpdate()
+    {
+        move();
     }
 
     private void move()
     {
         float mDirection = Input.GetAxis("Horizontal");
+        movement = Vector2.zero;
 
-        if (mDirection > 0.1f)
+        if (mDirection > 0)
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            movement.x += 1;
+            //rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(0.14332f, transform.localScale.y);
         }
-        else if (mDirection < -0.1f)
+        else if (mDirection < -0)
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            movement.x -= 1;
+            //rb.velocity = new Vector2(-speed, rb.velocity.y);
             transform.localScale = new Vector2(-0.14332f, transform.localScale.y);
         }
 
@@ -46,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
         playerAnim.SetInteger("State", (int)state);
+        rb.velocity = new Vector2(movement.x * Time.fixedDeltaTime * speed, rb.velocity.y);
+        Debug.Log(rb.velocity.ToString());
     }
 
     private void Jump()
@@ -70,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
                 state = State.idle;
             }
         }
-        else if(Mathf.Abs(rb.velocity.x) > 1.5f)
+        else if(Mathf.Abs(rb.velocity.x) > 0.1f)
         {
             state = State.running;
         }
