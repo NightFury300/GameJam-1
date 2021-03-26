@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private ItemHolder inventory;
 
 
-    [SerializeField] private float speed = 5.0f;
+    [SerializeField] private float speed = 50.0f;
     [SerializeField] private float jumpForce = 15f;
 
     [SerializeField]private LayerMask ground;
