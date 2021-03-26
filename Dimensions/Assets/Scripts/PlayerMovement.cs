@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     {
         move();
         PlayerState();
+        if(state == State.running)
+        {
+            FindObjectOfType<AudioManager>().Play("run");
+        }
     }
 
     private void move()

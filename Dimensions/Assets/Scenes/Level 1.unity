@@ -792,6 +792,11 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 416253408}
+    - target: {fileID: 1792485767884957105, guid: aa876c234775f3542bc7bd5fc2b77c98,
+        type: 3}
+      propertyPath: scalingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1792485767884957107, guid: aa876c234775f3542bc7bd5fc2b77c98,
         type: 3}
       propertyPath: m_Mass
@@ -953,6 +958,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792013134}
   m_CullTransparentMesh: 0
+--- !u!1001 &823774385
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554024, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288965221639554025, guid: 5ac599a164ffd9044b53cb17825d04b5,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ac599a164ffd9044b53cb17825d04b5, type: 3}
 --- !u!1 &862522385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2119,11 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 416253408}
+    - target: {fileID: 1792485767884957105, guid: aa876c234775f3542bc7bd5fc2b77c98,
+        type: 3}
+      propertyPath: scalingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1792485767884957106, guid: aa876c234775f3542bc7bd5fc2b77c98,
         type: 3}
       propertyPath: m_Material
@@ -10643,7 +10722,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 5048033460617020986}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ca52c9997d87d3549bc26ec3bf1d4b94, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
@@ -10666,7 +10745,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ca52c9997d87d3549bc26ec3bf1d4b94, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

@@ -19,6 +19,7 @@ public class SpikeDetector : MonoBehaviour
     {
         if(rb.IsTouchingLayers(spike))
         {
+            FindObjectOfType<AudioManager>().Play("die");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

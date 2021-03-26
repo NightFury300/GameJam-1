@@ -24,6 +24,7 @@ public class ItemHolder : MonoBehaviour
                 shrinkBallCount++;
                 break;        
         }
+        FindObjectOfType<AudioManager>().Play("acquire");
     }
 
     public int GetEnlargeCount()

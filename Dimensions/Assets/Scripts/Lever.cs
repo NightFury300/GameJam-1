@@ -15,6 +15,7 @@ public class Lever : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        FindObjectOfType<AudioManager>().Play("leverflick");
         leverClosed.SetActive(false);
         closedState.SetActive(false);
         leverPulled.SetActive(true);        

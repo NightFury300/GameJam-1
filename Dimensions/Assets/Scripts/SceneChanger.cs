@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D col){
 		if(col.tag == "Player"){
+            FindObjectOfType<AudioManager>().Play("levelclear");
 		SceneManager.LoadScene ("Level_2");
 		}
 	}

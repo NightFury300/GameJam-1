@@ -44,9 +44,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0.1
+  - name: enlarge
+    clip: {fileID: 8300000, guid: a89a92ea54ce6c64db9fb876f42406e8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    isLooping: 0
+  - name: shrink
+    clip: {fileID: 8300000, guid: a39fa8ce4914ede419a63fd37e11537f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    isLooping: 0
+  - name: acquire
+    clip: {fileID: 8300000, guid: 6a949c4b2b3d17d4dac8fde1258f8f63, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    isLooping: 0
+  - name: levelclear
+    clip: {fileID: 8300000, guid: 25356f33a4a84b64094d4599c66902a9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    isLooping: 0
+  - name: leverflick
+    clip: {fileID: 8300000, guid: 6805358d7c8de08479d3deab6e2cf01e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    isLooping: 0
+  - name: die
+    clip: {fileID: 8300000, guid: 5615685d972a751489f63836d5c34b83, type: 3}
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
     isLooping: 0
