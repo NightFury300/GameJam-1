@@ -3,7 +3,9 @@ using TMPro;
 
 public class ItemHolder : MonoBehaviour
 {
+    [SerializeField]
     private int enlargeBallCount = 0;
+    [SerializeField]
     private int shrinkBallCount = 0;
     [SerializeField] private TextMeshProUGUI enlargeBallCountText;
     [SerializeField] private TextMeshProUGUI shrinkBallCountText;
