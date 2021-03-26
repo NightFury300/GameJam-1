@@ -17,7 +17,7 @@ TagManager:
   - 
   - 
   - ground
-  - 
+  - spikes
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: HUD
     uniqueID: 3567347171
+    locked: 0
+  - name: GUI
+    uniqueID: 1936408235
     locked: 0

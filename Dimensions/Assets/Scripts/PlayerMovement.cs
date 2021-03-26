@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         PlayerState();
+        if(state == State.running)
+        {
+            FindObjectOfType<AudioManager>().Play("run");
+        }
     }
 
     private void FixedUpdate()
