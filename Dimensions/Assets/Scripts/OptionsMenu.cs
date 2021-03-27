@@ -46,6 +46,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void Back()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
 }
