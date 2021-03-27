@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7215a66d2dcecc94eabfed66a68e74fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 5200740173352058796, guid: 5cab5549dbb091b46b9cfdef9fb66d11,
+    type: 3}
   speed: 500
   jumpForce: 15
   ground:

@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private State state = State.idle;
     private ItemHolder inventory;
 
+    [SerializeField] private GameObject pauseMenu;
+
 
     [SerializeField] private float speed = 50.0f;
     [SerializeField] private float jumpForce = 15f;
@@ -24,7 +26,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+        }
     }
 
     private void FixedUpdate()
