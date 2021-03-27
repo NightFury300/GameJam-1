@@ -8,6 +8,7 @@ public class Play : MonoBehaviour
         if (collision.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			FindObjectOfType<AudioManager>().Play("Music");
         }
     }
 }
