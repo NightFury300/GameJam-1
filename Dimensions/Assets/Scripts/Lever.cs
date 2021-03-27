@@ -13,13 +13,19 @@ public class Lever : MonoBehaviour
     [SerializeField]
     private GameObject openState;
 
+    private bool isFLicked = false;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FindObjectOfType<AudioManager>().Play("leverflick");
-        leverClosed.SetActive(false);
-        closedState.SetActive(false);
-        leverPulled.SetActive(true);        
-        openState.SetActive(true);
+        if (!isFLicked)
+        {
+            FindObjectOfType<AudioManager>().Play("leverflick");
+            leverClosed.SetActive(false);
+            closedState.SetActive(false);
+            leverPulled.SetActive(true);
+            openState.SetActive(true);
+            isFLicked = true;
+        }
     }
 
 }

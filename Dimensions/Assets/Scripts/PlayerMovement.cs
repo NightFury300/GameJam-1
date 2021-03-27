@@ -24,15 +24,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        PlayerState();
-        if(state == State.running)
-        {
-            FindObjectOfType<AudioManager>().Play("run");
-        }
+        
     }
 
     private void FixedUpdate()
     {
+        PlayerState();
         move();
     }
 
@@ -43,24 +40,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (mDirection > 0)
         {
-            movement.x += 1;
-            //rb.velocity = new Vector2(speed, rb.velocity.y);
+            movement.x += 1;         
             transform.localScale = new Vector2(0.14332f, transform.localScale.y);
         }
         else if (mDirection < -0)
         {
-            movement.x -= 1;
-            //rb.velocity = new Vector2(-speed, rb.velocity.y);
+            movement.x -= 1;           
             transform.localScale = new Vector2(-0.14332f, transform.localScale.y);
         }
 
-        if (Input.GetButtonDown("Jump") && state != State.jumping && state != State.falling)
+        if (Input.GetButtonDown("Jump") && state != State.jumping && state != State.falling && Mathf.Abs(rb.velocity.y) < 0.1f)
         {
             Jump();
         }
         playerAnim.SetInteger("State", (int)state);
         rb.velocity = new Vector2(movement.x * Time.fixedDeltaTime * speed, rb.velocity.y);
-        Debug.Log(rb.velocity.ToString());
     }
 
     private void Jump()
@@ -81,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
         else if(state == State.falling)
         {
             if(rb.IsTouchingLayers(ground))
-            {
-                state = State.idle;
+            {               
+                state = State.idle;               
             }
         }
         else if(Mathf.Abs(rb.velocity.x) > 0.1f)

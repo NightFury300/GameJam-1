@@ -7,7 +7,6 @@ public class Exit : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Debug.Log("HI0;");
             Application.Quit();
         }
     }
