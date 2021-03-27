@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    public AudioMixerGroup mixer;
+
     public static AudioManager instance;
 
     void Awake()
@@ -29,12 +31,14 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.name = s.name;
             s.source.loop = s.isLooping;
+            
         }
     }
 
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.outputAudioMixerGroup = mixer;
         if (s == null)
             return;
         s.source.Play();

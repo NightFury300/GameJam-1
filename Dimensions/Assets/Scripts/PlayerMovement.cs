@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,9 +27,21 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (pauseMenu.activeSelf)
+                {
+                    pauseMenu.SetActive(false);
+                    Time.timeScale = 1.0f;
+                }
+                else
+                {
+                    pauseMenu.SetActive(true);
+                    Time.timeScale = 0.0f;
+                }
+            }
         }
     }
 

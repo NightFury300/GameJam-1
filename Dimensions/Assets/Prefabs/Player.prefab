@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 5200740173352058796, guid: 5cab5549dbb091b46b9cfdef9fb66d11,
     type: 3}
-  speed: 500
+  speed: 350
   jumpForce: 15
   ground:
     serializedVersion: 2
